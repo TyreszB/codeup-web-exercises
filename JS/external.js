@@ -16,21 +16,21 @@
  alert(`The price for renting the movies are: $`+ priceForMovies)
  // add variables for the companies times the amount of hours that they worked
  var googleRate = prompt(`How many hours did you work at Google? `) * 400
- var amazonRate = prompt(`How many hours did you work at Amazon? `) * 380
- var facebookRate = prompt(`How many hours did you work at Facebook? `) *350
+ var amazonRate = prompt(`How many hours did you work at Amazon? `) * 380;
+ var facebookRate = prompt(`How many hours did you work at Facebook? `) *350;
  // add all the pay from the week
- var payWeek = googleRate + amazonRate + facebookRate
- alert(`Your final pay of the week is: $`+ payWeek)
+ var payWeek = googleRate + amazonRate + facebookRate;
+ alert(`Your final pay of the week is: $`+ payWeek);
 // create confirmation prompts where the student can attend class status
- var noSpace = confirm(`Is there class space for the student?`)
- var noConflicts = confirm(`Does student have free schedule?`)
+ var noSpace = confirm(`Is there class space for the student?`);
+ var noConflicts = confirm(`Does student have free schedule?`);
  // create situation where student can enroll in class
- var canEnroll = noConflicts == true && noSpace == true
- alert(`Can the student enroll in class:`+ canEnroll)
+ var canEnroll = noConflicts == true && noSpace == true;
+ alert(`Can the student enroll in class:`+ canEnroll);
  // create situation where person an use discount
- var items = Number(prompt(`How many items were bought? `))
- var expired = confirm(`Is the offered active still?`)
- var premium = confirm(`Are you a Premium Member?`)
+ var items = Number(prompt(`How many items were bought? `));
+ var expired = confirm(`Is the offered active still?`);
+ var premium = confirm(`Are you a Premium Member?`);
 //  make and or logic for premium members and not premium members
- var offerAccept = items > 2 && expired == true && premium == false || expired == true && premium == true
- alert(`Can customer use product offer? `+ offerAccept)
+ var offerAccept = items > 2 && expired == true && premium == false || expired == true && premium == true;
+ alert(`Can customer use product offer? `+ offerAccept);
