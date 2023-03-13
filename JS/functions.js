@@ -21,7 +21,11 @@
  *
  * console.log 'helloMessage' to check your work
  */
-    var helloMessege = sayHello('Tyresz');
+    var helloMessege ='Tyresz';
+    console.log(helloMessege);
+    sayHello(helloMessege);
+
+
 
 /**
  * TODO:
@@ -79,10 +83,10 @@
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-    var bill = prompt(`How much was the bill total? `)
-    var prefTip= prompt(`How much would you like to tip? `)
-
-    alert(`The amount you wanted to tip is: $` + prefTip + `, but the correct tip amouont is: $`+ calculateTip(bill))
+    // var bill = prompt(`How much was the bill total? `)
+    // var prefTip= prompt(`How much would you like to tip? `)
+    //
+    // alert(`The amount you wanted to tip is: $` + prefTip + `, but the correct tip amouont is: $`+ calculateTip(bill))
 
 /**
  * TODO:
@@ -98,7 +102,14 @@
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+    function applyDiscount(price,disCount){
+        var disPrice = price * disCount;
+        var total = price - disPrice;
+    alert(`Your final total is: $`+ total)
 
+    }
+
+    applyDiscount(20000,0.3);
 
 
 
