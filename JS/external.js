@@ -1,11 +1,11 @@
  "use strict"
-//
-// console.log(`Hello from external JavaScript`)
-//
-// alert(`Welcome to my Website!`)
-//
-// var color = prompt(`Whats your favorite color?`)
-// console.log(color, `is a great choice of color!`)
+
+ console.log(`Hello from external JavaScript`)
+
+ alert(`Welcome to my Website!`)
+
+ var color = prompt(`Whats your favorite color?`)
+ console.log(color, `is my favorite color too!`)
 
  var littleMM =  Number(prompt(`How many days did you rent Little Mermaid: `))
  var bBear = Number(prompt(`How many days did you rent Brother Bear: `))
