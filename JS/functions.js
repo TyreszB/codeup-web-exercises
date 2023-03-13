@@ -33,8 +33,8 @@
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-    var myName = `Tyresz`
-    sayHello(myName)
+    var myName = `Tyresz`;
+    sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -61,8 +61,8 @@
         return random === 2;
     }
 
-    console.log(random)
-    console.log(isTwo())
+    console.log(random);
+    console.log(isTwo());
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -74,19 +74,22 @@
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-    function calculateTip(x) {
-        return x * .15;
+    function calculateTip(x,y) {
+       return x * y
+
     }
+
+    console.log(calculateTip(.15, 20000))
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-    // var bill = prompt(`How much was the bill total? `)
-    // var prefTip= prompt(`How much would you like to tip? `)
-    //
-    // alert(`The amount you wanted to tip is: $` + prefTip + `, but the correct tip amouont is: $`+ calculateTip(bill))
+    var x = prompt(`How much was the bill total? `);
+    var y = prompt(`What percentage would you like to tip? `);
+
+    alert(`The amount you wanted to tip is: $` + Number(calculateTip(x,y)) + `, but the correct tip amouont is: $`+ x * .15);
 
 /**
  * TODO:
@@ -105,7 +108,7 @@
     function applyDiscount(price,disCount){
         var disPrice = price * disCount;
         var total = price - disPrice;
-    alert(`Your final total is: $`+ total)
+    alert(`Your final total is: $`+ total);
 
     }
 
