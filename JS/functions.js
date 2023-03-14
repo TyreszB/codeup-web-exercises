@@ -9,11 +9,12 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-    function sayHello(x){
-    console.log(`Hello `+ x +`!`);
+    function sayHello(name){
+    return `Hello `+ name +`!`;
 
     }
-    sayHello(`codeup`);
+
+    console.log(sayHello(`codeup`));
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -21,9 +22,9 @@
  *
  * console.log 'helloMessage' to check your work
  */
-    var helloMessege ='Tyresz';
+    var helloMessege =sayHello(`Tyresz`);
     console.log(helloMessege);
-    sayHello(helloMessege);
+
 
 
 
@@ -34,7 +35,7 @@
  * console.
  */
     var myName = `Tyresz`;
-    sayHello(myName);
+    console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -57,12 +58,12 @@
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-    function isTwo() {
+    function isTwo(x) {
+        console.log(x)
         return random === 2;
     }
 
-    console.log(random);
-    console.log(isTwo());
+    console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -74,8 +75,8 @@
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-    function calculateTip(x,y) {
-       return x * y
+    function calculateTip(billTotal,tipPercentage) {
+       return billTotal * tipPercentage
 
     }
 
@@ -86,10 +87,10 @@
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-    var x = prompt(`How much was the bill total? `);
-    var y = prompt(`What percentage would you like to tip? `);
+    var billTotal = prompt(`How much was the bill total? `);
+    var calculateTip = prompt(`What percentage would you like to tip? `);
 
-    alert(`The amount you wanted to tip is: $` + Number(calculateTip(x,y)) + `, but the correct tip amouont is: $`+ x * .15);
+    alert(`The amount you wanted to tip is: $` + calculateTip(x,y) + `, but the correct tip amouont is: $`+ billTotal * .15);
 
 /**
  * TODO:
@@ -107,12 +108,11 @@
  */
     function applyDiscount(price,disCount){
         var disPrice = price * disCount;
-        var total = price - disPrice;
-    alert(`Your final total is: $`+ total);
+        return price - disPrice;
 
     }
 
-    applyDiscount(20000,0.3);
+    console.log(applyDiscount(20000,0.3));
 
 
 
