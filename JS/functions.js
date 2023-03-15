@@ -90,7 +90,7 @@
     var billTotal = prompt(`How much was the bill total? `);
     var calculateTip = prompt(`What percentage would you like to tip? `);
 
-    alert(`The amount you wanted to tip is: $` + calculateTip(x,y) + `, but the correct tip amouont is: $`+ billTotal * .15);
+    alert(`The amount you wanted to tip is: $` + calculateTip(billTotal,calculateTip) + `, but the correct tip amouont is: $`+ billTotal * .15);
 
 /**
  * TODO:
