@@ -5,14 +5,19 @@
 // }
 
 
-// randomCone = Math.floor(Math.random() * 100) + 50
-// var i = 0
-// while (randomCone > i){
-//     do {
-//         var buyCone = Math.floor(Math.random() * 5) + 1
-//         console.log(buyCone)}
-//         while(i ==! randomCone){
-//             console.log(i += buyCone)
-//         }
-//
-// }
+randomCone = Math.floor(Math.random() * 50 ) + 50
+console.log(`The cones needed to sale today: ` + randomCone)
+var i = 0
+while (i < randomCone) {
+    do {
+        var buyCone = Math.floor(Math.random() * 5) + 1
+        console.log(buyCone)
+        i += buyCone;
+    }
+        while (i ==! randomCone) {
+            console.log(`You sold ` + buyCone + ` cones!`);
+            console.log(`You have ` + (randomCone - i) + ` cones left.`);
+        }
+
+}
+
