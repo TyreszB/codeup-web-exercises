@@ -33,5 +33,5 @@
 
     planetsArray.forEach(function (planet){
         document.getElementById(`planets`).innerHTML+= `<li>${planet}</li>`
-    })
+    });
 })();
