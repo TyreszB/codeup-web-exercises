@@ -73,29 +73,40 @@
      */
 
     var books  = [
-        {   title: `48 Laws of Power`,
-            firstName: `Robert`,
-            lastName: `Greene`,
+        {
+            title: `48 Laws of Power`,
+            author: {
+                firstName: `Robert`,
+                lastName: `Greene`,
+            }
         },
         {
             title: `Curious George`,
-            firstName: `Margret`,
-            lastName: `Ray`,
+            author:{
+                firstName: `Margret`,
+                lastName: `Ray`,
+        }
         },
         {
             title:  `Monster`,
-            firstName: `Walter Dean`,
-            lastName: `Myers`,
+            author:{
+                firstName: `Walter Dean`,
+                lastName: `Myers`,
+            }
         },
         {
             title: `Junie B. Jones`,
-            firstName: `Barbra`,
-            lastName: 'Parks',
+            author: {
+                firstName: `Barbra`,
+                lastName: 'Parks',
+            }
         },
         {
             title: `The Rainbow Fish`,
-            firstName: `Marcus`,
-            lastName: `Pfister`,
+            author: {
+                firstName: `Marcus`,
+                lastName: `Pfister`,
+            }
         }
     ]
 
@@ -125,9 +136,7 @@
      */
 
     books.forEach(book =>{
-        console.log(`Book #`, books.indexOf(book) + 1);
-        console.log(`Title:`, book.title);
-        console.log('Author:', book.firstName, book.lastName);
+        showBooksInfo(book)
     })
 
     /**
@@ -141,11 +150,23 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(){
-        var newBook = prompt(`Whats a new book you want to add? `)
-        var author = prompt(`who is the author of the book? `)
+    // function createBook(title,author){
+    //    return{
+    //        title: title,
+    //        author: author,
+    //
+    //    }
+    // }
+// var books = [createBook(`Monster`, `Walter Dean Myers`)]
+//
+//     console.log(books)
+
+
+
+    function showBooksInfo(book){
+        console.log(`Book #`, books.indexOf(book) + 1);
+        console.log(`Title:`, book.title);
+        console.log('Author:', book.author.firstName, book.author.lastName);
+        console.log(`---`)
     }
-
-
-
 })();
