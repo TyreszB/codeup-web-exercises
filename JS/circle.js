@@ -36,7 +36,7 @@
     circle.logInfo(true);
 
     console.log("=======================================================");
-    circle['radius'] = 5
+    circle.radius = 5
 
 
 
