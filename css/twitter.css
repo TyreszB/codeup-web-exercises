@@ -91,20 +91,20 @@ a {
 }
 .profile-details{
     float: left;
-    width: 25%;
-    margin: 0 calc(0.5em - 30px);
+    width: calc(25% - 150px);
+    margin: 0 0.5em;
 }
 
 .timeline{
     float: left;
-    width: calc(50% - 300px);
-    margin: 0 calc(0.5em - 150px);
+    width: 50%;
+    margin: 0 0.5em;
 }
 
 .who-to-follow{
     float: left;
-    width: calc(25% - 200px);
-    margin: 0 calc(0.5em + 150px);
+    width: calc(25% - 10px);
+    margin: 0 0.5em;
 }
 
 .container{
@@ -131,9 +131,8 @@ a {
 }
 
 .media-body{
-    float: right;
+    float: left;
     width: calc(100% - 50px);
-
 }
 
 .profile-entry{
