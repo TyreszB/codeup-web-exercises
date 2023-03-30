@@ -1,0 +1,53 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+#container{
+    display: flex;
+    align-content: space-between;
+    display: flex;
+    background-color: darkgray;
+    width: 100%;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    color: black;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+
+#nav-bar-item{
+    display: flex;
+    padding: 0.5em;
+    font-family: "Work Sans";
+    font-weight: bold;
+    margin: auto;
+
+}
+
+#logo {
+    font-size: 3em;
+    padding: 0.2em;
+    font-family: "Montserrat";
+    font-weight: bold;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+header :nth-child(1){
+    padding: 0;
+}
