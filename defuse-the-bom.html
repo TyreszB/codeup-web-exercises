@@ -9,6 +9,8 @@
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
+<a href="http://www.yahoo.com" id="search-link">Web Search</a>
+
 <script>
     (function () {
         "use strict";
@@ -27,20 +29,11 @@
             detonationTimer--;
         }
 
-        var count = 0
-        var max = 5
-        var IntervalId = setInterval(function () {
-            if (count > max) {
-                clearInterval(IntervalId);
-            } else {
-                count++
-                updateTimer()
-            }
-        }, 1000)
+  var timeOut = setInterval(updateTimer,1000)
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM() {
-            clearInterval(IntervalId);
+            clearInterval(timeOut);
             alert('YOU HAVE NOT BEEN EXTERMINATED');
         }
 
