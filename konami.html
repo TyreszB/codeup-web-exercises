@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p class="code" id="code"></p>
+
+<script src="/js/jquery.js"></script>
+<script>
+    "use strict";
+    $(function () {
+        let codeSecert = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13]
+        let cheatCode = []
+        $(document).keyup(function (event) {
+            let code = event.keyCode
+            cheatCode.push(Number(code))
+            cheatCode.splice(-codeSecert.length - 1, cheatCode.length - codeSecert.length)
+            $('#code').text(cheatCode)
+            console.log(JSON.stringify(cheatCode))
+            if (code === 13) {
+                if (JSON.stringify(cheatCode) === JSON.stringify(codeSecert)) {
+                    alert('CONGRATULATIONS KOMANI CODE UNLOCKED!');
+                } else {
+                    alert('BETTER LUCK NEXT TIME')
+                    $('#code').text('')
+                }
+                cheatCode = []
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

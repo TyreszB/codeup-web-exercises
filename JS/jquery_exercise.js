@@ -8,7 +8,7 @@ $(function () {
     });
 
     $('p').on({
-        click: function () {
+        dblclick: function () {
             $(this).css('font-size', '18px')
         }
     });
@@ -16,9 +16,5 @@ $(function () {
     $('li').hover(
         function (){
             $(this).css('color', 'red')
-        },
-        function (){
-            $(this).css('color', 'black')
-        }
-        );
+        });
 });
