@@ -92,8 +92,33 @@
                     campgrounds, and in some lodging facilities.
                 </dd>
             </dl>
+            <h3 class="facts">Everglades</h3>
+            <ul class="list">
+                <li>One of the largest wetlands in the world, but used to be much larger.
+                </li>
+                <li>The largest remaining subtropical wilderness left in North America.</li>
+                <li>Composed of the largest contiguous stand of protected mangroves in the Northern Hemisphere.</li>
+                <li>Home to unique, rare and endangered species.</li>
+            </ul>
+            <h3 class="facts">Denali</h3>
+            <ul class="list">
+                <li>Denali is Visible 200 Miles Away.</li>
+                <li>The Frogs Freeze Themselves Alive.</li>
+                <li>Climbers tried Summiting Denali a Century Ago</li>
+                <li>Denali has Been a National Park Twice.</li>
+            </ul>
+            <h3 class="facts">Enchanted Rock</h3>
+            <ul class="list">
+                <li>Enchanted Rock rises 425 feet above the base elevation of the park.</li>
+                <li>Its high point is 1,825 feet above sea level, and the entire dome covers 640 acres</li>
+                <li> Climbing the Rock is like climbing the stairs of a 30- or 40-story building</li>
+                <li>More than 400 archeological sites have been found in the park</li>
+            </ul>
+            <button class="highlight btn btn-primary m-2">Highlight</button>
         </div>
+
         <div class="col"></div>
+
     </div>
 </div>
 
@@ -109,7 +134,7 @@
             $('dd').toggleClass('invisible');
         })
 
-        $('h1').click(e=>{
+        $('h1').click(e => {
             $('dt').css('background-color', 'white')
         })
 
@@ -117,7 +142,27 @@
             $(this).css('background-color', 'yellow')
         }
 
-        $('dt').click(highlight);
+        $('dt').each(function (index) {
+            $(this).click(highlight)
+        });
+
+
+        $('.highlight').click(function () {
+            $('ul').each(function (index) {
+                $(this.children).last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function () {
+            $('li').css('font-weight', 'bold');
+        });
+
+           $('.list>li').click(function (){
+               $('.list').each(function(index){
+                   $(this).children().first().css('color', 'blue')
+               });
+           });
+
     });
 </script>
 </body>
