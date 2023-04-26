@@ -21,7 +21,7 @@
 
     $.get('./data/blog.json').done(function (data){
       data.forEach(function(post){
-        $('#posts').append(`<h4 class="mb-3">${post.title}</h4><div>${post.content}</div><div class="m-2 text-capitalize">Categoties: ${post.categories}</div><div class="mb-2"> Date: ${post.date}</div>`)
+        $('#posts').append(`<div class="card p-2 m-2"><h4 class="mb-3">${post.title}</h4><div>${post.content}</div><div class="m-2 text-capitalize">Categoties: ${post.categories}</div><div class="mb-2"> Date: ${post.date}</div></div>`)
       })
     });
 
