@@ -21,10 +21,14 @@
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
-<button id="lvl5">Level 5 Zoom</button>
-<button id="lvl10">Level 10 Zoom</button>
-<button id="lvl15">Level 15 Zoom</button>
-<button id="lvl20">Level 20 Zoom</button>
+<select id="zoom-select">
+    <option value="20">Level 20 Zoom</option>
+    <option value="15">Level 15 Zoom</option>
+    <option value="10">Level 10 Zoom</option>
+    <option value="5">Level 5 Zoom</option>
+</select>
+
+<input type="text">
 
 <!-- Custom JS -->
 <script src="./js/jquery.js"></script>
@@ -43,24 +47,31 @@
         {
             name: 'CoCoIchibanya',
             lngLat: [139.328163, 35.742275],
-            info: 'This place is a special place that makes japans special delicious curry'
+            info: 'This place is a special place that makes japans special delicious curry',
+            urlLoc:"./img/coco.jpeg"
         },
         {
             name: 'Ichiran',
             lngLat: [139.41567, 35.69727],
-            info: 'Ichiran is a ramen shop that allows you to enjoy ramen in privacy with little waiter interaction'
+            info: 'Ichiran is a ramen shop that allows you to enjoy ramen in privacy with little waiter interaction',
+            urlLoc:"./img/ichiran.jpeg"
         },
         {
             name: '7-Elevn',
-            lngLat: [139.33678,35.74213],
-            info: `7-11 in japan is different than most other 7-11's as it has a constant stock of bento boxes`
+            lngLat: [139.33678, 35.74213],
+            info: `7-11 in japan is different than most other 7-11's as it has a constant stock of bento boxes`,
+            urlLoc: "./img/bento.jpeg"
         }
     ]
 
-    places.forEach(function (place){
+    places.forEach(function (place) {
         const popup = new mapboxgl.Popup()
             .setLngLat(place.lngLat)
-            .setHTML(`<h1>${place.name}</h1><p>${place.info}</p>`)
+            .setHTML(
+                `<h1>${place.name}</h1>
+                 <p>${place.info}</p>
+<img src=${place.urlLoc}>`
+            )
 
         const marker = new mapboxgl.Marker()
             .setLngLat(place.lngLat)
@@ -68,19 +79,12 @@
             .addTo(map)
     })
 
+$('select').change(function(){
+    map.zoomTo($('select').val(),5000)
+});
 
-    $('#lvl5').click(function () {
-        map.zoomTo(5, {duration: 9000})
-    });
-    $('#lvl10').click(function () {
-        map.zoomTo(10, {duration: 9000})
-    });
-    $('#lvl15').click(function () {
-        map.zoomTo(15, {duration: 9000})
-    });
-    $('#lvl20').click(function () {
-        map.zoomTo(20, {duration: 9000})
-    });
+
+
 
 
 
