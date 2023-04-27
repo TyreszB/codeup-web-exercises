@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
 <head>
     <title>Konami Code</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-    <style>
-
-    </style>
 </head>
 <body>
 <div class="container">
-
-    <div class="row d-flex justify-content-center align-items-center h-500">
-        <button class=" col-3 btn btn-danger">Konami Code</button>
-
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <img id="fade" class="d-none rounded-5 mt-5" src="./img/konami.jpeg">
+        </div>
+        <div class="col"></div>
+        <div class="text-center fs-5 mt-5 text-uppercase col-12" id="code"></div>
+        <div class="col-12 d-flex justify-content-center">
+            <button id="fade2" class="d-none col-3 btn btn-danger mt-5 ">
+                Enter
+            </button>
+        </div>
     </div>
 </div>
-<div class="text-center fs-5 mt-5 text-uppercase col" id="code"></div>
+
 
 <script src="/js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -29,34 +33,26 @@
         let codeSecert = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
         let cheatCode = []
         let realKey = []
+        //fade in logo & button
+        $('#fade, #fade2').fadeIn(2000).removeClass('d-none')
         $(document).keyup(function (event) {
+            // konami code
             let code = event.keyCode
             cheatCode.push(Number(code))
             cheatCode.splice(-codeSecert.length - 1, cheatCode.length - codeSecert.length)
             realKey.push(event.key)
             realKey.splice(-codeSecert.length - 1, cheatCode.length - codeSecert.length)
             $('#code').text(cheatCode)
-            if (code === 13) {
+            $('#fade2').click(function () {
                 if (JSON.stringify(cheatCode) === JSON.stringify(codeSecert)) {
-                    $('body').css('background-color', '#3d3d3d')
-                    $('h1,div').css('color', 'white')
-                    setTimeout(function () {
-                        $('.d-none').removeClass('d-none');
-                        $('body').click(function () {
-                            $('#code, #icons').fadeOut();
-                            $('#img-placement').addClass('fade-in');
-                            $('#img-placement').removeClass('d-none');
-                        });
-                    }, 2000);
                     alert('CONGRATULATIONS KOMANI CODE UNLOCKED!');
-                } else {
-                    alert('BETTER LUCK NEXT TIME')
+                } else if (JSON.stringify(cheatCode) !== JSON.stringify(codeSecert)) {
                     $('#code').text('')
+                    alert('BETTER LUCK NEXT TIME')
                 }
                 cheatCode = []
                 realKey = []
-            }
-
+            })
 
         });
     });

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+<button id="lvl5">Level 5 Zoom</button>
+<button id="lvl10">Level 10 Zoom</button>
+<button id="lvl15">Level 15 Zoom</button>
+<button id="lvl20">Level 20 Zoom</button>
+
+<!-- Custom JS -->
+<script src="./js/jquery.js"></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidHlyZXN6IiwiYSI6ImNsZ3kzbWF2ZTA1cHIzZW1wbTdiNDZpejQifQ.WzFFu5mU4hY2Y5KVoLT5vA';
+    var map = new mapboxgl.Map(
+        {
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            zoom: 11, // starting zoom
+            center: [139.328163, 35.742261] // [lng, lat]
+        });
+    map.scrollZoom.disable()
+
+    let places = [
+        {
+            name: 'CoCoIchibanya',
+            lngLat: [139.328163, 35.742275],
+            info: 'This place is a special place that makes japans special delicious curry'
+        },
+        {
+            name: 'Ichiran',
+            lngLat: [139.41567, 35.69727],
+            info: 'Ichiran is a ramen shop that allows you to enjoy ramen in privacy with little waiter interaction'
+        },
+        {
+            name: '7-Elevn',
+            lngLat: [139.33678,35.74213],
+            info: `7-11 in japan is different than most other 7-11's as it has a constant stock of bento boxes`
+        }
+    ]
+
+    places.forEach(function (place){
+        const popup = new mapboxgl.Popup()
+            .setLngLat(place.lngLat)
+            .setHTML(`<h1>${place.name}</h1><p>${place.info}</p>`)
+
+        const marker = new mapboxgl.Marker()
+            .setLngLat(place.lngLat)
+            .setPopup(popup)
+            .addTo(map)
+    })
+
+
+    $('#lvl5').click(function () {
+        map.zoomTo(5, {duration: 9000})
+    });
+    $('#lvl10').click(function () {
+        map.zoomTo(10, {duration: 9000})
+    });
+    $('#lvl15').click(function () {
+        map.zoomTo(15, {duration: 9000})
+    });
+    $('#lvl20').click(function () {
+        map.zoomTo(20, {duration: 9000})
+    });
+
+
+
+</script>
+</body>
+</html>
