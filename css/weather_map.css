@@ -1,10 +1,11 @@
 
 #map {
     /* the width and height may be set to any size */
-    width: calc(100% - 100px);
-    height: 800px;
+    width: calc(100% - 85px);
+    height: 400px;
 }
 h1{
     font-family: 'Vina Sans';
     font-size: 50px;
 }
+
