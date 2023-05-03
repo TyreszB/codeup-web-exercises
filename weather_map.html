@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
@@ -11,102 +11,39 @@
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Geocoder -->
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+          type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
     <script src="js/keys.js"></script>
-    <style>
-        #map {
-            /* the width and height may be set to any size */
-            width: calc(100% - 100px);
-            height: 750px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/weather_map.css">
 </head>
+<nav class="navbar bg-dark">
+
+    <div class="container-fluid">
+        <svg  class="ms-5 col" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cloud-lightning-rain-fill" viewBox="0 0 16 16">
+            <path d="M2.658 11.026a.5.5 0 0 1 .316.632l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.316zm9.5 0a.5.5 0 0 1 .316.632l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.316zm-7.5 1.5a.5.5 0 0 1 .316.632l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.316zm9.5 0a.5.5 0 0 1 .316.632l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.316zm-7.105-1.25A.5.5 0 0 1 7.5 11h1a.5.5 0 0 1 .474.658l-.28.842H9.5a.5.5 0 0 1 .39.812l-2 2.5a.5.5 0 0 1-.875-.433L7.36 14H6.5a.5.5 0 0 1-.447-.724l1-2zm6.352-7.249a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z"/>
+        </svg>
+        <h1 class="col-10 d-flex justify-content-center">The Weather App</h1>
+    </div>
+</nav>
 <body>
 
 <dvi class="container">
     <div class="row">
         <div class="col-3 d-flex flex-column align-items-center" id="forecast"></div>
-        <div class =" col rounded-4 m-3" id='map'></div>
+        <div class=" col rounded-4 m-3 border border-secondary-subtle" id='map'></div>
     </div>
+
 </dvi>
 
 <script src="js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-<script>
-    mapboxgl.accessToken = OPEN_MAPBOX_APPID;
-    let map = new mapboxgl.Map(
-        {
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11/', // style URL
-            zoom: 11, // starting zoom
-            center: [-79.792,36.0726 ] // [lng, lat]
-        });
+<script src="js/weather_map.js"></script>
 
-    map.addControl(new MapboxGeocoder({
-        accessToken: OPEN_MAPBOX_APPID,
-        mapboxgl: mapboxgl,
-        }));
-
-
-$('input').change(function (){
-    let newCity = $(this).val()
-    console.log(encodeURIComponent(newCity))
-    $.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/q=${(encodeURIComponent(newCity))}.json?access_token=${OPEN_MAPBOX_APPID}`,{
-
-    }). done(function(data){
-        console.log(data.features[0].geometry.coordinates)
-    })
-})
-
-
-
-    // function geocode(search, token) {
-    //     var baseUrl = 'https://api.mapbox.com';
-    //     var endPoint = '/geocoding/v5/mapbox.places/';
-    //     return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-    //         .then(function (res) {
-    //             return res.json();
-    //             // to get all the data from the request, comment out the following three lines...
-    //         }).then(function (data) {
-    //             // 1. once we get data back, we want to grab the value of the city
-    //             console.log(data);
-    //             return data.features[0].center;
-    //         });
-
-    // }
-
-
-        $.get("https://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPEN_WEATHER_APPID,
-        q: "Greensboro, US",
-        units: "imperial"
-    }).done(function (weatherData) {
-        let weatherDay = weatherData.list
-
-
-        console.log(weatherData)
-            // const lngLat = map.getLngLat();
-            // console.log(lngLat);
-
-        function weatherWeek() {
-            for (let i = 0; i < 40; i+=8) {
-                $('#forecast').append(`<div class="card col-8 m-4"><div class="card-body"><h5 class="card-title"> ${weatherData.list[i].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[i].weather[0].description}</h6><img src="https://openweathermap.org/img/wn/${weatherDay[i].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[i].main.temp_min}°F / ${weatherDay[i].main.temp_max}°F</div></div>`)
-            }
-        }
-
-        weatherWeek()
-    });
-
-
-    // laura's notes:
-    // $('input').keyup(function(data){
-    //     console.log($(this).val())
-    //     let citySearch = $(this).val()
-    //     $.get(`mapbox/${citySearch}`)
-    // })
-
-</script>
 </body>
 </html>
