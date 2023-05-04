@@ -8,7 +8,7 @@ let map = new mapboxgl.Map(
     {
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/dark-v11/', // style URL
-        zoom: 8, // starting zoom
+        zoom: 5, // starting zoom
         center: [-79.792, 36.0726] // [lng, lat]
     });
 
@@ -32,15 +32,15 @@ marker.on('dragend',function(e){
         let weatherDay = weatherData.list
         function WeatherWeek() {
 
-            $('#forecast').html(`<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
+            $('#forecast').html(`<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
 
         }
 
@@ -77,15 +77,15 @@ geocoder.on('result', e => {
             let weatherDay = weatherData.list
             function WeatherWeek() {
 
-                $('#forecast').html(`<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
+                $('#forecast').html(`<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
 
             }
 
@@ -112,15 +112,15 @@ $('input').change(function () {
 marker.remove()
             function WeatherWeek() {
 
-                $('#forecast').html(`<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
+                $('#forecast').html(`<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[0].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[0].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[0].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[0].main.temp_min}°F / ${weatherDay[0].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[8].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[8].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[8].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[8].main.temp_min}°F / ${weatherDay[8].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[16].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[16].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[16].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[16].main.temp_min}°F / ${weatherDay[16].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[24].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[24].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[24].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[24].main.temp_min}°F / ${weatherDay[24].main.temp_max}°F</div></div></div>
 
-<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
+<div class="card col-8 m-4 roll-in-blurred-left"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[32].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[32].weather[0].description}</h6><img class="h-50 w-50" src="https://openweathermap.org/img/wn/${weatherDay[32].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[32].main.temp_min}°F / ${weatherDay[32].main.temp_max}°F</div></div></div>`)
 
             }
 
@@ -140,11 +140,9 @@ $.get("https://api.openweathermap.org/data/2.5/forecast", {
 
     function weatherWeek() {
         for (let i = 0; i < 40; i += 8) {
-            $('#forecast').append(`<div class="card col-8 m-4"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[i].dt_txt}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[i].weather[0].description}</h6><img class="h-50 w-50"  src="https://openweathermap.org/img/wn/${weatherDay[i].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[i].main.temp_min}°F / ${weatherDay[i].main.temp_max}°F</div></div></div>`)
+            $('#forecast').append(`<div class="card col-8 m-4 bounce-in-top"><div class="card-body d-flex flex-column align-items-center"><h5 class="card-title"> ${weatherData.list[i].dt_txt.slice(0,10)}</h5><h6 class="card-subtitle text-body-secondary text-capitalize">${weatherDay[i].weather[0].description}</h6><img class="h-50 w-50"  src="https://openweathermap.org/img/wn/${weatherDay[i].weather[0].icon}@2x.png"><div class="text-center">${weatherDay[i].main.temp_min}°F / ${weatherDay[i].main.temp_max}°F</div></div></div>`)
         }
     }
 
     weatherWeek()
 });
-
-
