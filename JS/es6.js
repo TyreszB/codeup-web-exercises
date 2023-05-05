@@ -40,8 +40,8 @@ const languages = ['html', 'css', 'javascript','python'];
 // const email = 'tyreszbrash@codeup.com'
 
 // TODO: rewrite the object literal using object property shorthand
-const user ={name, email, languages};
-console.log(user)
+users.push ({name, email, languages});
+console.log(users)
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
@@ -61,7 +61,7 @@ users.forEach(user => {
     const {name, email, languages} = user
 
     // TODO: rewrite the assignment below to use template strings
-    developers.push(`${name}'s email is ${email} ${name} knows ${languages}`);
+    developers.push(`${name}'s email is ${email} ${name} knows ${languages.join(', ')}`);
 });
 console.log(developers)
 
