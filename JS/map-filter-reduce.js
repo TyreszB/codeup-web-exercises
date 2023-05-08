@@ -59,7 +59,7 @@ console.log(longEmail)
 const names = users.map(user => user.name)
 
 const instructors = names.reduce((prevUser, nextUser) => {
-    return `Your instructors are ${prevUser}, ${nextUser}`
+    return `Your instructors are ${prevUser}, ${nextUser}.`
 });
 console.log(instructors)
 
